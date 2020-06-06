@@ -16,6 +16,11 @@ Vue.use(VueRouter)
     component: () => import( '../views/New.vue')
   },
   {
+    path: '/edit',
+    name: 'Edit',
+    component: () => import( '../views/Edit.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
