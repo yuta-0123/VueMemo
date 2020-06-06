@@ -1,18 +1,19 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="home">
+    <ul>
+      <li v-for="memo in newst" :key="memo.id">
+        {{memo.body}}
+      </li>
+    </ul>
   </div>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  name:"home",
+  computed:{
+    newst:function(){
+      return this.$store.state.memos.slice().reverse();
+    }
   }
 }
 </script>
